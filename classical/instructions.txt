@@ -1,0 +1,8 @@
+
+1. Run apply_models.m in MATLAB to apply the classical models to the illusion stimuli in '../illusions_matching'. This generates new subdirectories, one for each model, with the model outputs in .mat files.
+
+2. Run model_matches.m in MATLAB to find reflectance matches for each illusion stimulus, for each model, using the model outputs generated in step 1. This generates a file (model_matches.txt) with the matches.
+
+3. Run plotit.py in Python to plot the illusion strength for each model and condition. This is a subset of Figure 6 in the paper, for the three classical models. See comments in plotit.py for a legend explaining the abbreviations of condition names used in this plot.
+
+4. Open and run the Jupyter notebook scatterplots/classical_reflectance_estimation.ipynb to generate scatterplots showing predicted vs. actual luminance for each model, as shown in the paper. The correlation and median error values shown in these plots differ slightly from those in the paper, as the values in the paper are based on 5 x 10^6 samples from the test set, whereas the values in these plots are based on just the 10^3 samples plotted here.

@@ -1,0 +1,20 @@
+
+1. The directory 'render' contains Python code for generating the training images. We generated the 110K training, validation, and test images using server-specific scripts, which we have not included here. Instead, we have included the script geo_render.py, which generates a single training image, as well as a module blender_util.py that it relies on. You can use your own routines to run this script 110K times to generate the training set.
+
+Do not call geo_render.py directly, but instead, call Blender 2.92 and have it run geo_render.py. First, at the shell command line, put the current directory, containing these rendering scripts, on your Python path:
+
+export PYTHONPATH="$PYTHONPATH":.
+
+Then call Blender to render the file:
+
+blender --background --python-use-system-env --python geo_render.py -- --filename image.hdr --engine eevee --rngseed 0 --resolution 512
+
+Pass a different value for rngseed, and you will get a different random training image.
+
+2. The directory 'train' contains Python code for training IRNet. Run training.py, passing it arguments '--imagedir' that specifies the location of the training data, '--runnum' that specifies a number for the training run (e.g., we used runs 1 to 10), which will be used in the name of the file that saves the network weights, and '--res' that specifies the resolution of the training images (e.g., we used 512).
+
+3. illusion_range_analysis.ipynb is a Python notebook that applies IRNet with trained weights to the illusion stimuli. It saves the model outputs to a separate folder for each training run.
+
+4. Run model_matches.m in MATLAB to find IRNet's reflectance matches for each illusion stimulus. This generates a file (model_matches.txt) with the matches.
+
+5. Run analysis/full_illusion_analysis.ipynb to generate Figure 6 in the paper. In order for this to work, the matches from all network training runs and models needs to be in a single text file, irnet/data/model_matches.txt. Simply take the outputs of irnet/model_matches.m and the outputs of classical/model_matches.m, and paste them into a single file (eliminating the header names except in the top row). A sample of such a file is included in the supporting information in irnet/data/model_matches.m.

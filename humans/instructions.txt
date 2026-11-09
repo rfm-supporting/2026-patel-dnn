@@ -1,0 +1,8 @@
+
+The main Python script that runs the experiment for human observers is expt.py. Set the variable 'initials' in this script to the initials of the observer, and run the experiment. See the methods section of the paper for a description of the task. The script will create a new data file for the observer in the 'data' subdirectory.
+
+The 'data' subdirectory contains trial-by-trial data files for the results from human observers that are reported in the main text.
+
+The 'illusions_isoluminant' subdirectory contains luminance and reflectances images for each illusion. In the luminance images, the reference and match regions are isoluminant. Files with 'mask' in their name provide masks for selecting the reference and match regions.
+
+human_analysis.ipynb is a Jupyter notebook that finds mean matches for each observer in each condition.
