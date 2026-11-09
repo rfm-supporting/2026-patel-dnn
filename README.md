@@ -7,7 +7,7 @@ Here we describe the contents of each subdirectory. See files called instruction
 
 In the top-level directory is venv.yaml, which specifies the Python modules needed to run the code. The Anaconda distribution of Python can use this file to create an appropriate environment.
 
-1. Experiment with human observers
+1\. Experiment with human observers
 
 humans
 - Python code to run the experiment for human observers
@@ -27,7 +27,7 @@ humans/tools
 - calibration data and custom Python modules used by the experiment script
 
 
-2. IRNet network
+2\. IRNet network
 
 irnet.py
 - definition of IRNet network
@@ -52,7 +52,7 @@ irnet/analysis
 - Python code to produce Figure 6 (illusion strengths for humans and models) and scatterplots in the paper
 
 
-3. Classical models
+3\. Classical models
 
 classical
 - MATLAB code to apply the models to illusion images
@@ -65,7 +65,7 @@ classical/scatterplots
 - Python code that reproduces the scatterplots shown in the paper for the models
 
 
-4. Illusion stimuli for the simulated matching experiment
+4\. Illusion stimuli for the simulated matching experiment
 
 illusions_matching
 - illusions for simulated matching tasks for IRNet and the classical models
