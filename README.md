@@ -9,9 +9,9 @@ In the top-level directory is venv.yaml, which specifies the Python modules need
 
 1. Experiment with human observers
 
-- humans
--- Python code to run the experiment for human observers
--- Python analysis code that quantifies the illusion for each observer
+humans
+- Python code to run the experiment for human observers
+- Python analysis code that quantifies the illusion for each observer
 
 humans/data
 - trial-by-trial data files for each observer
